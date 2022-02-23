@@ -1,0 +1,122 @@
+:root {
+--app-background: #efefee;
+--white: #fff;
+--light-blue : #2b8ead;
+--dark-blue : #2f454e;
+--grey-blue : #6f98a8;
+--grey : #bfbfbf;
+--button-blue: #72c3dc;
+--button-shadow: #0081a8;
+}
+
+.card {
+  color: var(--white);
+  padding: 1rem;
+  height: 11rem;
+  line-height: 11rem;
+  text-align: center;
+  font-size: 6rem;
+  animation: changeLetter 1s linear alternate;
+}
+
+.card-container {
+  width: 40rem;
+  max-width: 40rem;
+  display: grid;
+}
+.component {
+  display: flex;
+  flex-direction: row-reverse;
+  place-content: flex-end;
+}
+.light-blue {
+  background-color: var(--light-blue);
+}
+.dark-blue {
+  background-color: var(--dark-blue);
+}
+.grey-blue {
+  background-color: var(--grey-blue);
+}
+.grey {
+  background-color: var(--grey);
+}
+button {
+  background-color: var(--button-blue);
+  width: 10rem;
+  border: none;
+  margin: 0.5rem 1rem;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 6px 0px var(--button-shadow);
+  -moz-box-shadow: 0px 6px 0px var(--button-shadow);
+  box-shadow: 0px 6px 0px var(--button-shadow);
+}
+.button-container {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media only screen and (max-width: 500px) {
+  body{
+    background: var(--white);
+  }
+  .card-container {
+    width: auto;
+    padding: 1rem;
+  }
+  .component {
+    flex-direction: column;
+  }
+  .button-container {
+    display: flex;
+    margin: 8px 0px;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .button-container button {
+    margin: 0px 5px 5px;
+    width: 6rem;
+    height: 3rem;
+  }
+  .card {
+    height: 1rem;
+    line-height: 1rem;
+    background: var(--app-background);
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.25rem;
+  }
+  .light-blue {
+    border-left: 0.5rem solid var(--light-blue);
+  }
+  .dark-blue {
+    border-left: 0.5rem solid var(--dark-blue);
+  }
+  .grey-blue {
+    border-left: 0.5rem solid var(--grey-blue);
+  }
+  .grey {
+    border-left: 0.5rem solid var(--grey);
+  }
+}
+
+
+@media only screen and (min-width: 500px) and (max-width: 900px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    height: 5rem;
+    line-height: 5rem; 
+  }
+}
+
+@media (min-width: 900px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
